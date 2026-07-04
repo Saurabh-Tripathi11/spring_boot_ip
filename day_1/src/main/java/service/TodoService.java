@@ -1,29 +1,29 @@
 package service;
 
-import entity.todoEntity;
+import entity.TodoEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.todoRepository;
+import repository.TodoRepository;
 
 import java.util.List;
 
 @Service
-public class todoService {
+public class TodoService {
     @Autowired
-    private todoRepository todoRepository;
+    private TodoRepository todoRepository;
 
     // Get all todos
-    public List<todoEntity> getAllTodos() {
+    public List<TodoEntity> getAllTodos() {
         return todoRepository.findAll();
     }
 
     // Save a new todo
-    public todoEntity saveTodo(todoEntity todo) {
+    public TodoEntity saveTodo(TodoEntity todo) {
         return todoRepository.save(todo);
     }
 
     // Get todo by id
-    public todoEntity getTodoById(Long id) {
+    public TodoEntity getTodoById(Long id) {
         return todoRepository.findById(id).orElse(null);
     }
 

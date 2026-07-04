@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class todoEntity {
+public class TodoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,10 +15,10 @@ public class todoEntity {
 
     private boolean status;
 
-    public todoEntity() {
+    public TodoEntity() {
     }
 
-    public todoEntity(Long id, String title, boolean status) {
+    public TodoEntity(Long id, String title, boolean status) {
         this.id = id;
         this.title = title;
         this.status = status;
